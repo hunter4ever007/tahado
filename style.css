@@ -895,3 +895,191 @@ button{ font-family: inherit; }
   .btn, .card, .category-card, .store-btn, .social-btn{ transition:none; }
   .ripple::after{ display:none; }
 }
+
+/* =========================
+   Contact Page Styling
+========================= */
+
+.contact-wrapper{
+  max-width: 640px;
+  margin: auto;
+}
+
+.contact-form{
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+}
+
+.contact-form label{
+  font-weight:600;
+  font-size:14px;
+  color: rgba(23,23,34,.85);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.75);
+  font-family: inherit;
+  font-size: 14px;
+  transition: all .2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(234,122,168,.15);
+  background: white;
+}
+
+.contact-form textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* =====================================
+   Contact Page (Only إضافات — لا يؤثر على index)
+===================================== */
+
+.contact-wrapper{
+  max-width: 640px;
+  margin: auto;
+}
+
+.contact-form{
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form label{
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(23,23,34,.85);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.85);
+  font-family: inherit;
+  font-size: 14px;
+  transition: all .2s ease;
+}
+
+.contact-form textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(234,122,168,.15);
+  background: #fff;
+}
+
+/* Validation colors */
+.contact-form input:invalid,
+.contact-form select:invalid,
+.contact-form textarea:invalid{
+  border-color: #b1b1b1;
+}
+
+.contact-form input:valid,
+.contact-form select:valid,
+.contact-form textarea:valid{
+  border-color: #30a46c;
+}
+
+/* Email link below form */
+.contact-alt{
+  margin-top: 32px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.contact-alt a{
+  color: var(--accent);
+  font-weight: 600;
+  transition: opacity .2s ease;
+}
+
+.contact-alt a:hover{
+  opacity: .7;
+  text-decoration: underline;
+}
+
+/* =========================
+   Toast Notification
+========================= */
+
+.toast{
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  min-width: 260px;
+  max-width: 90%;
+  padding: 16px 22px;
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,.75);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  text-align: center;
+  font-weight: 600;
+  opacity: 0;
+  transition: all .4s ease;
+  z-index: 9999;
+}
+
+.toast-success{
+  border-color: rgba(48,164,108,.4);
+}
+
+.toast-error{
+  border-color: rgba(229,72,77,.4);
+}
+
+.toast.show{
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f7e6ef" />
+  <title>تواصل معنا | Tahado</title>
+  <link rel="icon" type="image/x-icon" href="assets/fav.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* فورم مخصص بنفس أسلوب index */
+    .contact-wrapper{
+      max-width: 600px;
+      margin-inline:auto;
+      padding: 40px 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(23,23,34,.08);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-wrapper h1{
+      margin-bottom: 24px;
+      font-weight: 800;
+      font-size: clamp(24px, 2.5vw, 32px);
+    }
+
+    .contact-form .form-group{
+      display:flex;
+      flex-direction:column;
+      margin-bottom: 16px;
+    }
+
+    .contact-form label{
+      margin-bottom:6px;
+      font-weight:600;
+      color: var(--primary);
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select{
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--stroke);
+      background: var(--white);
+      font-family: inherit;
+      font-size: 15px;
+      resize: vertical;
+    }
+
+    .contact-form textarea{
+      min-height: 120px;
+    }
+
+    .contact-form select{
+      cursor:pointer;
+    }
+
+    .contact-form button{
+      margin-top: 12px;
+    }
+
+    .contact-alt{
+      text-align:center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--primary);
+    }
+    .contact-alt a{
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Toast notification */
+    .toast{
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-40px);
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      color: #fff;
+      opacity: 0;
+      pointer-events:none;
+      transition: all .4s ease;
+      z-index: 9999;
+    }
+    .toast.show{
+      opacity:1;
+      transform: translateX(-50%) translateY(0);
+    }
+    .toast-success{ background: linear-gradient(135deg, rgba(130,240,180,.92), rgba(72,200,130,.92)); }
+    .toast-error{ background: linear-gradient(135deg, rgba(240,130,130,.92), rgba(200,72,72,.92)); }
+
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <nav class="nav container" aria-label="التنقل الرئيسي">
+      <a class="brand" href="index.html">
+        <img src="assets/Logo.png" alt="Midyaf" />
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section section--gradient">
+    <div class="container contact-wrapper">
+      <h1 class="section-head" style="text-align:center;">تواصل معنا</h1>
+
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden" name="access_key" value="e8deac9b-54b2-4b7d-94d3-ddf1d81f0d18">
+        <input type="hidden" name="subject" value="طلب جديد من نموذج التواصل">
+
+        <div class="form-group">
+          <label for="name">الاسم</label>
+          <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">رقم الهاتف</label>
+          <input type="tel" id="phone" name="phone" placeholder="أدخل رقم الهاتف" required pattern="[0-9+]{6,15}">
+        </div>
+
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني</label>
+          <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+        </div>
+
+        <div class="form-group">
+          <label for="type">نوع الطلب</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>اختر نوع الطلب</option>
+            <option value="شكوى">شكوى</option>
+            <option value="طلب">طلب</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">نص الطلب</label>
+          <textarea id="message" name="message" placeholder="اكتب نص طلبك هنا..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary ripple">إرسال الطلب</button>
+
+        <div class="contact-alt">
+          ويمكنكم التواصل عبر إرسال بريد إلكتروني إلى 
+          <a href="mailto:info@midyaf.com">info@midyaf.com</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- إشعار الإرسال -->
+  <script>
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          showToast("تم إرسال طلبك بنجاح ✨", "success");
+          form.reset();
+        } else {
+          showToast("حدث خطأ أثناء الإرسال ❌", "error");
+        }
+
+      } catch (error) {
+        showToast("تعذر الاتصال بالخادم ⚠️", "error");
+      }
+    });
+
+    function showToast(message, type) {
+      const toast = document.createElement("div");
+      toast.className = `toast toast-${type}`;
+      toast.innerText = message;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.classList.add("show"), 100);
+      setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 400);
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
