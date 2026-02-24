@@ -34,6 +34,7 @@ $$("[data-scroll]").forEach(a => {
 /* Mobile nav toggle */
 const toggle = $(".nav-toggle");
 const links = $("#navLinks");
+const languageToggle = $(".language-toggle");
 
 function openNav() {
   links?.classList.add("is-open");
@@ -49,9 +50,16 @@ toggle?.addEventListener("click", () => {
   expanded ? closeNav() : openNav();
 });
 
+// Language toggle functionality
+languageToggle?.addEventListener("click", () => {
+  // This will be handled by the lang.js file
+  // But we need to close the mobile menu after language change
+  closeNav();
+});
+
 document.addEventListener("click", (e) => {
   if (!links || !toggle) return;
-  const clickedInside = links.contains(e.target) || toggle.contains(e.target);
+  const clickedInside = links.contains(e.target) || toggle.contains(e.target) || languageToggle?.contains(e.target);
   if (!clickedInside) closeNav();
 });
 

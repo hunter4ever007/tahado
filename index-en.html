@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#f7e6ef" />
   <title>Tahado | تهادوا</title>
-  <meta name="description" content="Tahado | تهادوا - اكتشف هدايا مميزة، اطلبها بسهولة، ووصلها لمن تحب." />
+  <meta name="description" content="Tahado | تهادوا - Discover special gifts, order them easily, and deliver them to your loved ones." />
   <link rel="icon" type="image/x-icon" href="assets/fav.png">
 
   <!-- Fonts -->
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  
+
   <header class="topbar">
     <nav class="nav container" data-i18n-aria-label="nav_label">
       <a class="brand" href="#home" data-scroll>
@@ -29,8 +29,8 @@
       </button>
 
       <div class="nav-links" id="navLinks">
-        <a href="contact.html" data-i18n="nav_contact">تواصل معنا</a>
-        <button class="language-toggle ripple" data-i18n="nav_language">English</button>
+        <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+        <button class="language-toggle ripple" data-i18n="nav_language">العربية</button>
       </div>
     </nav>
   </header>
@@ -42,13 +42,13 @@
         <div class="hero-content reveal">
 
 
-          <h1 class="hero-title" data-i18n="hero_title">الهدايا صارت أسهل وأجمل</h1>
+          <h1 class="hero-title" data-i18n="hero_title">Gifts made easier and more beautiful</h1>
           <p class="hero-sub" data-i18n="hero_subtitle">
-            اطلب هديتك الان وستصل خلال 90 دقيقة
+            Order your gift now and it will arrive within 90 minutes
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-ghost ripple" href="#preview" data-scroll data-i18n="hero_download_app">حمّل التطبيق</a>
+            <a class="btn btn-ghost ripple" href="#preview" data-scroll data-i18n="hero_download_app">Download App</a>
           </div>
 
           <div class="trust">
@@ -56,31 +56,31 @@
         </div>
 
         <div class="hero-art reveal" aria-hidden="true">
-          <img src="assets/phone1.png" data-i18n-alt="phone_alt" alt="معاينة تطبيق تهادوا" />
+          <img src="assets/phone1.png" data-i18n-alt="phone_alt" alt="Tahado app preview" />
         </div>
       </div>
 
       <div class="scroll-hint" aria-hidden="true">
-        <span data-i18n="hero_scroll_hint">اسحب للأسفل</span>
+        <span data-i18n="hero_scroll_hint">Scroll down</span>
         <div class="mouse"></div>
       </div>
     </section>
 
-    
+
 
     <!-- 4) APP PREVIEW -->
     <section class="section" id="preview">
       <div class="container split">
         <div class="split-text reveal">
-          <h2 data-i18n="preview_title">تجربة إهداء راقية… من أول اختيار إلى لحظة التسليم</h2>
+          <h2 data-i18n="preview_title">An elegant gifting experience… from first choice to delivery moment</h2>
           <p class="lead" data-i18n="preview_subtitle">
-            تهادوا يجمع بين الترتيب الجميل، خيارات تخصيص ذكية، والتوصيل السريع داخل مدينة جدة.
+            Tahado combines beautiful arrangement, smart customization options, and fast delivery within Jeddah city.
           </p>
 
           <ul class="checklist">
-            <li data-i18n="preview_feature1">اقتراحات هدايا حسب المناسبة والشخص</li>
-            <li data-i18n="preview_feature2">تخصيص فوري للبطاقة والرسالة والتغليف</li>
-            <li data-i18n="preview_feature3">جدولة التوصيل وتتبع الطلب بسهولة</li>
+            <li data-i18n="preview_feature1">Gift suggestions based on occasion and person</li>
+            <li data-i18n="preview_feature2">Instant customization of card, message and wrapping</li>
+            <li data-i18n="preview_feature3">Schedule delivery and track orders easily</li>
           </ul>
 
           <div class="store-row">
@@ -95,12 +95,12 @@
         </div>
 
         <div class="split-media reveal is-visible" aria-hidden="true">
-          <img src="assets/phone2.png" data-i18n-alt="app_preview_alt" alt="معاينة التطبيق" />
+          <img src="assets/phone2.png" data-i18n-alt="app_preview_alt" alt="App preview" />
         </div>
       </div>
     </section>
 
-    
+
   </main>
 
   <!-- 6) FOOTER -->
@@ -110,7 +110,7 @@
         <img src="assets/Logo.png" data-i18n-alt="brand_alt" alt="Tahado | تهادوا" />
       </div>
 
-      <div class="footer-links" data-i18n-aria-label="footer_links_label" aria-label="روابط">
+      <div class="footer-links" data-i18n-aria-label="footer_links_label" aria-label="Links">
 
       </div>
 
@@ -118,11 +118,17 @@
     </div>
 
     <div class="container footer-bottom">
-      <small>© <span id="year"></span> Tahado | تهادوا — <span data-i18n="footer_copyright">جميع الحقوق محفوظة</span></small>
+      <small>© <span id="year"></span> Tahado | تهادوا — <span data-i18n="footer_copyright">All rights reserved</span></small>
     </div>
   </footer>
 
   <script src="lang.js"></script>
+  <script>
+    // Set language to English on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      window.tahadoI18n.updateLanguage('en');
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
