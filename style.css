@@ -126,6 +126,26 @@ button{ font-family: inherit; }
   background: rgba(255,255,255,.7);
 }
 
+.language-toggle {
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: rgba(23,23,34,.78);
+  font-weight: 400;
+  font-size: 14px;
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(23,23,34,.10);
+  transition: transform .2s ease, background .2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-toggle:hover {
+  background: rgba(255,255,255,.85);
+  transform: translateY(-1px);
+}
+
 .nav-toggle{
   display:none;
   width: 44px;
