@@ -9,7 +9,7 @@ const translations = {
 
     // Hero section
     hero_title: "لأن اللحظات الحلوة ماتستنى",
-    hero_subtitle: "اطلب هديتك الان وستصل خلال 90 دقيقة",
+    hero_subtitle: "هديتك توصل إليك خلال 90 دقيقة داخل مدينة جدة ",
     hero_download_app: "حمّل التطبيق",
     hero_scroll_hint: "اسحب للأسفل",
 
@@ -64,7 +64,7 @@ const translations = {
 
     // Hero section
     hero_title: "Because sweet moments don’t wait.",
-    hero_subtitle: "Order your gift now and it will arrive within 90 minutes",
+    hero_subtitle: "Your gift will arrive within 90 minutes inside Jeddah city.",
     hero_download_app: "Download App",
     hero_scroll_hint: "Scroll down",
 
