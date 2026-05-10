@@ -8,7 +8,7 @@ const translations = {
     nav_home: "الرئيسية",
 
     // Hero section
-    hero_title: "الهدايا صارت أسهل وأجمل",
+    hero_title: "لأن اللحظات الحلوة ماتستنى",
     hero_subtitle: "اطلب هديتك الان وستصل خلال 90 دقيقة",
     hero_download_app: "حمّل التطبيق",
     hero_scroll_hint: "اسحب للأسفل",
@@ -63,7 +63,7 @@ const translations = {
     nav_home: "Home",
 
     // Hero section
-    hero_title: "Gifts made easier and more beautiful",
+    hero_title: "Because sweet moments don’t wait.",
     hero_subtitle: "Order your gift now and it will arrive within 90 minutes",
     hero_download_app: "Download App",
     hero_scroll_hint: "Scroll down",
