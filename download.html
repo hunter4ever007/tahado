@@ -1,0 +1,15 @@
+<script>
+const ua = navigator.userAgent.toLowerCase();
+
+if (/iphone|ipad|ipod/.test(ua)) {
+    window.location.href =
+      "https://apps.apple.com/us/app/6742783552";
+}
+else if (/android/.test(ua)) {
+    window.location.href =
+      "https://play.google.com/store/apps/details?id=com.masader.tahaddoo";
+}
+else {
+    window.location.href = "https://tahado.sa";
+}
+</script>
